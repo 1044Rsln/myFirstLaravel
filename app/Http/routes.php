@@ -7,7 +7,10 @@
    * Вывести панель с задачами
    */
   Route::get('/', function () {
-    return view('tasks');
+    // $task = new Task();
+   //   $tasks=$task->all();
+    $tasks = Task::orderBy('created_at', 'asc')->get();
+    return view('tasks',['tasks'=>$tasks]);
   });
 
   /**
@@ -35,5 +38,6 @@
    * Удалить задачу
    */
   Route::delete('/task/{task}', function (Task $task) {
-    //
+     $task->delete();
+     return redirect('/');
   });
