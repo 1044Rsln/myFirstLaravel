@@ -62,6 +62,13 @@
                         <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                     </form>
                 </td>
+                <td>
+                    <form action="" method="post">
+                        {{csrf_field()}}
+                        
+                        <button class="btn btn-default"><i class="fa fa-edit"></i></button>
+                    </form>
+                </td>
               </tr>
               @endforeach
           </tbody>
