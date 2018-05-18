@@ -45,7 +45,8 @@
    * Изменить задачу
    */
   Route::edit('/task/{task}', function (Task $task) {
-     //создание формы
+     //создание формы 
+      //https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
   });
 
   //save to db
