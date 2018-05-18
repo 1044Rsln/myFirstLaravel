@@ -41,5 +41,11 @@
      $task->delete();
      return redirect('/');
   });
+  /**
+   * Изменить задачу
+   */
+  Route::edit('/task/{task}', function (Task $task) {
+     //создание формы
+  });
 
-  
+  //save to db

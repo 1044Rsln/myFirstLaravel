@@ -63,7 +63,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action="" method="post">
+                    <form action="{{ url('task/'.$task->id) }}" method="post">
                         {{csrf_field()}}
                         
                         <button class="btn btn-default"><i class="fa fa-edit"></i></button>
