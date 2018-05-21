@@ -63,9 +63,9 @@
                     </form>
                 </td>
                 <td>
-                    <form action="{{ url('task/'.$task->id) }}" method="post">
+                    <form action="{{ url('task/edit/'.$task->id) }}" method="post">
                         {{csrf_field()}}
-                        
+                        {{method_field('get')}}
                         <button class="btn btn-default"><i class="fa fa-edit"></i></button>
                     </form>
                 </td>

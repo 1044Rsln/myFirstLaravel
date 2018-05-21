@@ -44,9 +44,31 @@
   /**
    * Изменить задачу
    */
-  Route::edit('/task/{task}', function (Task $task) {
-     //создание формы find
-      //https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
+  Route::get('/task/edit/{task}', function (Task $task) {
+    return view('taskedit', [
+        'task' => $task,
+    ]);
   });
+  
+  
+  Route::post('/task/edit', function (Request $request) {
+     $validator = Validator::make($request->all(), [
+		'name' => 'required|max:255|min:6',
+    ]);
+
+    if ($validator->fails()) {
+	return redirect( '/task/edit/' . $request->id )
+			->withInput()
+			->withErrors($validator);
+    }
+    $task = Task::find($request->id);
+    $task->name = $request->name;
+    $task->save();
+    return redirect('/');
+});
+
+    //создание формы find
+      //https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
+ 
 
   //save to db
