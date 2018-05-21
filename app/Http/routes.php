@@ -67,8 +67,6 @@
     return redirect('/');
 });
 
-    //создание формы find
-      //https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
- 
+    
 
   //save to db
